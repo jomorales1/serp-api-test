@@ -16,12 +16,20 @@ class RequestData(BaseModel):
     engine: str
     query: str
     location: Union[str, None] = None
+    num: int
+    as_ylo: Union[int, None] = None
+    as_yhi: Union[int, None] = None
+    hl: str
 
 router = APIRouter()
 
 @router.post('/search', tags=['search'], status_code=200)
 async def get_report(request_data: RequestData):
-    params = {'engine': request_data.engine, 'q': request_data.query, 'api_key': api_key}
+    params = {'engine': request_data.engine, 'q': request_data.query, 'num': request_data.num, 'hl': request_data.hl, 'api_key': api_key}
+    if request_data.as_ylo:
+        params['as_ylo'] = request_data.as_ylo
+    if request_data.as_yhi:
+        params['as_yhi'] = request_data.as_yhi
     if request_data.location:
         params['location'] = request_data.location
     results = {}

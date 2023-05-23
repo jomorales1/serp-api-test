@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"engine\": \"google_scholar\",\r\n    \"query\": \"biology\"\r\n}",
+					"raw": "{\r\n    \"engine\": \"google_scholar\",\r\n    \"query\": \"biology\",\r\n    \"num\": 20,\r\n    \"as_ylo\": 2018,\r\n    \"as_yhi\": 2022,\r\n    \"hl\": \"en\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
